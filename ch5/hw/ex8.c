@@ -33,7 +33,7 @@ int main(int argc, char* argv[]) {
             fprintf(stderr, "fork\n");
             exit(1);
         } else if (rc2 == 0) {
-             close(STDIN_FILENO);
+            close(STDIN_FILENO);
             dup2(pipefd[0], STDIN_FILENO);
             close(pipefd[0]);
             close(pipefd[1]);
