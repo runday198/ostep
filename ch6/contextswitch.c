@@ -41,7 +41,7 @@ int main() {
 
         char buffer[BUFSIZ];
         for (int i = 0; i < 2; i++) {
-            printf("child 1: %d\n", 10);
+            write(STDOUT_FILENO, "asd", 3);
 
             int bytes_read = read(0, buffer, BUFSIZ);
             buffer[bytes_read] = '\0';
@@ -66,7 +66,7 @@ int main() {
                 int bytes_read = read(0, buffer, BUFSIZ);
                 buffer[bytes_read] = '\0';
 
-                printf("Child 2 read: %s\n", buffer);
+                write(STDOUT_FILENO, "asd", 3);
             }
 
             close(pipefd1[0]);
